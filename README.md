@@ -11,3 +11,9 @@ Resources for interns
 | Brandon Rhodes   | Python conference talks | [When Python Practices Go Wrong](https://www.youtube.com/watch?v=S0No2zSJmks) |
 | Raymond Hettinger | Python conference talks | [Modern Dictionaries](https://www.youtube.com/watch?v=p33CVV29OG8) |
 | [David Beazely](https://www.youtube.com/@dabeazllc) | Python conference talks | [The Fun of Reinvention](https://www.youtube.com/watch?v=js_0wjzuMfc) |
+| [Kevin Fang](https://www.youtube.com/@kevinfaang/videos) | Incident post-mortem explanations | [SQL Command blowing up 5 billion $$ company](https://www.youtube.com/watch?v=R7VVwfh0Wpo) |
+
+## Guides
+
+- Git tricks: https://ohshitgit.com/
+
