@@ -2,6 +2,21 @@
 
 Resources for interns
 
+- [interns](#interns)
+  - [Youtube](#youtube)
+  - [Guides \& References](#guides--references)
+  - ["Design Patterns/Rules"](#design-patternsrules)
+    - [Bad Rules](#bad-rules)
+      - ["DRY" - Don't Repeat Yourself](#dry---dont-repeat-yourself)
+      - [SOLID Principles](#solid-principles)
+      - [Design Patterns](#design-patterns)
+      - ["Clean Code" by Robert C. Martin](#clean-code-by-robert-c-martin)
+    - [Good Rules](#good-rules)
+  - [Resources](#resources)
+    - [Youtube](#youtube-1)
+
+---
+
 ## Youtube
 
 | channel                | description                                   | example video                       |
@@ -20,24 +35,50 @@ Resources for interns
 
 ## "Design Patterns/Rules"
 
-### Bad
+### Bad Rules
 
-> Dont't blindly follow these rules!
+> [!CAUTION]
+> *Don't blindly follow these rules!*
 
-- "DRY" - Don't Repeat Yourself
-- SOLID Principles
-  - Single Responsibility Principle
-  - Open/Closed Principle
-  - Liskov Substitution Principle
-  - Interface Segregation Principle
-  - Dependency Inversion Principle
+#### "DRY" - Don't Repeat Yourself
+
+> *"Duplication is cheaper than the wrong abstraction"*
+
+Don't paint yourself into a corner by over-engineering abstractions too early, as you're likely to miss a pattern or nuance that only becomes clear over time as you encounter the same problem multiple times, in slightly different ways.
+
+#### SOLID Principles
+
+- `S`ingle Responsibility Principle
+- `O`pen/Closed Principle
+- `L`iskov Substitution Principle
+- `I`nterface Segregation Principle
+- `D`ependency Inversion Principle
+
+These rules aim to make code more maintainable, but often lead to
+- a massive increase in LOC
+- excessive fragmentation of code into tiny classes and interfaces
+  - that make your code harder to follow
+  - might never be useful in practice
+
+The main rule to keep in mind is "Single Responsibility" - try to ensure that each area of your code is not coupled with others, and does as close to "one thing" as is pragmatic.
+
+#### Design Patterns
+
+These patterns are from the 90s, when languages were very different to the ones we use in the modern age. Many of them were solving problems that no longer exist.
+
 - Gang of Four Design Patterns
   - Singleton, Factory Method, Abstract Factory, Builder, Prototype
   - Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy
   - Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor
-- "Clean Code" by Robert C. Martin
 
-### Good
+#### "Clean Code" by Robert C. Martin
+
+See this vid (timstamped) for a great insight into why this approach (and talking about it in general) should be avoided
+
+https://youtu.be/IRTfhkiAqPw?t=1180
+
+
+### Good Rules
 
 The Zen of Python: https://peps.python.org/pep-0020/
 
