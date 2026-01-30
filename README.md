@@ -5,12 +5,13 @@ Resources for interns
 - [interns](#interns)
   - [Youtube](#youtube)
   - [Guides \& References](#guides--references)
-  - ["Design Patterns/Rules"](#design-patternsrules)
+  - [Rules/"Design Patterns"](#rulesdesign-patterns)
     - [Bad Rules](#bad-rules)
       - ["DRY" - Don't Repeat Yourself](#dry---dont-repeat-yourself)
       - [SOLID Principles](#solid-principles)
       - [Design Patterns](#design-patterns)
       - ["Clean Code" by Robert C. Martin](#clean-code-by-robert-c-martin)
+      - ["X" Sucks](#x-sucks)
     - [Good Rules](#good-rules)
   - [Resources](#resources)
     - [Youtube](#youtube-1)
@@ -23,17 +24,16 @@ Resources for interns
 |------------------------|-----------------------------------------------|-------------------------------------|
 | [ByteByteGo](https://www.youtube.com/@ByteByteGo) | System Design and Software Engineering       | [APIs in 6 mins](https://www.youtube.com/watch?v=hltLrjabkiY) |
 | [Bread on Penguins](https://www.youtube.com/@BreadOnPenguins) | Linux | [My Linux Productivity Workflow](https://www.youtube.com/watch?v=x22k3csfJCo) |
-| Brandon Rhodes   | Python conference talks | [When Python Practices Go Wrong](https://www.youtube.com/watch?v=S0No2zSJmks) |
-| Raymond Hettinger | Python conference talks | [Modern Dictionaries](https://www.youtube.com/watch?v=p33CVV29OG8) |
-| [David Beazely](https://www.youtube.com/@dabeazllc) | Python conference talks | [The Fun of Reinvention](https://www.youtube.com/watch?v=js_0wjzuMfc) |
+| Brandon Rhodes   | Good basic engineering/dev practices (Python conference talks) | [When Python Practices Go Wrong](https://www.youtube.com/watch?v=S0No2zSJmks) |
+| Raymond Hettinger | Python core developer for dict/itertools/more (Python conference talks) | [Modern Dictionaries](https://www.youtube.com/watch?v=p33CVV29OG8) |
+| [David Beazely](https://www.youtube.com/@dabeazllc) | Advanced-level lecturer/scientist (Python conference talks) | [The Fun of Reinvention](https://www.youtube.com/watch?v=js_0wjzuMfc) |
 | [Kevin Fang](https://www.youtube.com/@kevinfaang/videos) | Incident post-mortem explanations | [SQL Command blowing up 5 billion $$ company](https://www.youtube.com/watch?v=R7VVwfh0Wpo) |
 
 ## Guides & References
 
 - Git tricks: <https://ohshitgit.com/>
 
-
-## "Design Patterns/Rules"
+## Rules/"Design Patterns"
 
 ### Bad Rules
 
@@ -77,6 +77,15 @@ See this vid (timstamped) for a great insight into why this approach (and talkin
 
 https://youtu.be/IRTfhkiAqPw?t=1180
 
+#### "X" Sucks
+
+Everything sucks, aka everything in programming has downsides and trade-offs.
+
+Don't blindly subscribe to any particular point of view, and don't feel bad if someone has a strong opinion on something that you do.
+
+Ultimately, the sign of a good developer is to be able to describe which downsides apply in a specific situation and balance all those downsides to suggest a good path forward.
+
+---
 
 ### Good Rules
 
