@@ -33,6 +33,7 @@ Resources for interns
 ## Guides & References
 
 - Git tricks: <https://ohshitgit.com/>
+- Python Repo Practices: https://tmck-code.github.io/articles/20260204_python_repo_practices/20260204_python_repo_practices.html
 
 ## Rules/"Design Patterns"
 
