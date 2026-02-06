@@ -14,6 +14,7 @@ Resources for interns
       - ["X" Sucks](#x-sucks)
     - [Good Rules](#good-rules)
   - [Some good quotes](#some-good-quotes)
+  - [Recommendations](#recommendations)
   - [Resources](#resources)
     - [Youtube](#youtube-1)
 
@@ -122,6 +123,16 @@ Namespaces are one honking great idea -- let's do more of those!
 You have a problem and decide to use regex to solve it. Now you have two problems.   
 
 For those who have a hammer, everything is a nail.   
+
+## Recommendations
+
+| thing         | noob if you use | better if you use      |
+|---------------|-----------------|------------------------|
+| database      | mysql           | postgres               |
+| installation  | anaconda        | uv + docker            |
+| linting       | pylint          | ruff                   |
+| editor        | sublime         | vscode/vim/jetbrains   |
+| config files  | no backups      | your own dotfiles repo |
 
 ## Resources
 
