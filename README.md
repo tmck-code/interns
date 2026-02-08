@@ -30,6 +30,7 @@ Resources for interns
 | Raymond Hettinger | Python core developer for dict/itertools/more (Python conference talks) | [Modern Dictionaries](https://www.youtube.com/watch?v=p33CVV29OG8) |
 | [David Beazely](https://www.youtube.com/@dabeazllc) | Advanced-level lecturer/scientist (Python conference talks) | [The Fun of Reinvention](https://www.youtube.com/watch?v=js_0wjzuMfc) |
 | [Kevin Fang](https://www.youtube.com/@kevinfaang/videos) | Incident post-mortem explanations | [SQL Command blowing up 5 billion $$ company](https://www.youtube.com/watch?v=R7VVwfh0Wpo) |
+| [You Suck at Programming](https://www.youtube.com/@YouSuckatProgramming/videos) | BASH tutorials | TODO |
 
 ## Guides & References
 
@@ -141,3 +142,5 @@ For those who have a hammer, everything is a nail.
 | video | topic |
 |---|---|
 | <https://www.youtube.com/watch?v=oV9rvDllKEg> | concurrency is not parallelism |
+| https://youtu.be/AWVTKBUnoIg | 5 main deployment strategies |
+
