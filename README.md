@@ -144,3 +144,24 @@ For those who have a hammer, everything is a nail.
 | <https://www.youtube.com/watch?v=oV9rvDllKEg> | concurrency is not parallelism |
 | https://youtu.be/AWVTKBUnoIg | 5 main deployment strategies |
 
+## Interview Advice
+
+### CV
+- Reduce fluff!
+- Be specific and avoid word salad (long lists of every conceivable language/framework/platform)
+	- If you list one of these, try to include a brief mention of something specific that you did with it
+	- When parsing long lists as an interviewer, it's impossible to tell which thing someone is actually familiar with
+	- the longer the list, the more that everything becomes blanketed in doubt
+	- e.g.
+	 > "*Technologies: docker-compose, django, wagtail CMS, celery, redis, postgres, uwsgi, nginx, unittest, swagger(api docs), sphinx(project docs), minio(object storage), sentry(error notification)*"
+- When listing previous experience, focus on 
+	- _what_ was delivered
+	- the value that it delivered
+	 - your specific role and achievements
+	- don't focus too much on implementation details/languages etc, only if it's important or impressive
+	- e.g. 
+> 		*"team member on a project that delivered an email notification system that processes 3 million incoming emails per day, and analysed the sentiment on demand via AI. This powered a sales engineer that delivered 1 mil of extra revenue per quarter. Personally contributed across the whole project, and specifically to the index and DB query optimisation"*
+- Separately, it's good to summarise what techs you're familiar with
+	- and ideally link to projects on a public GitHub repo
+		- plus a link to something that actually runs, or summarises in a deep-dive blog post (the more images the better, not walls of text) 
+	- delineate between your best proficiencies, and ones that you've been exposed to
