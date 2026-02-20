@@ -106,9 +106,9 @@ async def qmain():
     ]
     start = time.time()
 
-    result = await asyncio.gather(*tasks))
+    result = await asyncio.gather(*tasks)
 
-    print(f'time taken: {time.time()-start})
+    print(f'time taken: {time.time()-start}')
     return result
 
 result = asyncio.run(qmain())
