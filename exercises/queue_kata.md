@@ -12,6 +12,9 @@
 
 > There is an interactive version of this in a [jupyter notebook](queue_kata.ipynb).
 > The only difference in the code is that `asyncio.run` is not used in the notebook, and instead the main async function is run using `await` (due to jupyter notebooks already being in an async context).
+>
+> This is just intended as a different format to read through the exercise (as it renders in github) rather than a way to run the code, as this requires installing jupyter and running the notebook.
+> In general, I think notebooks are fine for exploratory data work, especially if you need to display tables or graphs, but apart from that they are not good for general development practice.
 
 ## Example 1
 
