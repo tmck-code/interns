@@ -10,6 +10,9 @@
   - [Problem 3: Results](#problem-3-results)
 
 
+> There is an interactive version of this in a [jupyter notebook](queue_kata.ipynb).
+> The only difference in the code is that `asyncio.run` is not used in the notebook, and instead the main async function is run using `await` (due to jupyter notebooks already being in an async context).
+
 ## Example 1
 
 This a simple async function. It's marked as async by using `async def`
