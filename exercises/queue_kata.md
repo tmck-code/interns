@@ -65,8 +65,8 @@ Notes:
 
 - it is not possible to call async functions directly from non-async code. doing something like `hello_world()` with an async function will simply have no effect - the async code will only run with `await` or `asyncio.run` etc.
 - async functions do NOT switch execution to another unless `await` is used.
-  - this is in contrast to `threading`, where this switching happens at random points that you have no control over
-  - this is the pivotal, main distinction between `async` and `threads`
+    - this is in contrast to `threading`, where this switching happens at random points that you have no control over
+    - this is the pivotal, main distinction between `async` and `threads`
 - if you need to switch control to another async function without actually doing anything, you can use `await asyncio.sleep(0)`
 - print debugging/logging is your friend when writing async code. As the number of async tasks grows, so does the complexity of their interactions, and it's not always possible to use unit testing alone in order to ensure expected behaviour and avoid deadlocks
 
@@ -148,17 +148,17 @@ The `queue` is a handy class from `asyncio` that supports `put` and `get` (among
 
 1. Estimate how long the above code should (roughly) take to run. Write down your prediction to check it later
 2. Does the code above finish and print the result?
-  - If not, can you figure out why?
+    - If not, can you figure out why?
 3. Modify the code so that it finishes, by communicating it via the `queue`
-  - check the total time against your prediction. if it's different, can you reason/understand why it took the time that it did?
+    - check the total time against your prediction. if it's different, can you reason/understand why it took the time that it did?
 
 ### Problem 2: Scale & Communication
 
 4. Run 2 more consumers alongside the existing producer & consumer. Tip: Ensure that they have unique IDs
-  - Does the code run to completion? If not, can you figure out why and modify the code so that it does?
+    - Does the code run to completion? If not, can you figure out why and modify the code so that it does?
 5. Estimate - what is the lowest possible theoretical time that this could run in?
 6. Add more async workers until you reach close to the fastest/lowest time (Don't modify any of the sleeps!)
-  - check the total time against your prediction. if it's different, can you reason/understand why it took the time that it did?  
+    - check the total time against your prediction. if it's different, can you reason/understand why it took the time that it did?  
 
 ### Problem 3: Results
 
@@ -166,4 +166,4 @@ The `queue` is a handy class from `asyncio` that supports `put` and `get` (among
     ```
     consumer ID | queue item
     ```
-    - Make all the consumers write their output to the same (single) file, something like `results.txt`
+      - Make all the consumers write their output to the same (single) file, something like `results.txt`
