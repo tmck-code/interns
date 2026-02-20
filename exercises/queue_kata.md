@@ -1,5 +1,17 @@
 ## Async code kata
 
+- [Async code kata](#async-code-kata)
+- [Example 1](#example-1)
+- [Example 2](#example-2)
+- [Exercise](#exercise)
+  - [asyncio.Queue](#asyncioqueue)
+  - [Problem 1: Communication](#problem-1-communication)
+  - [Problem 2: Scale \& Communication](#problem-2-scale--communication)
+  - [Problem 3: Results](#problem-3-results)
+
+
+## Example 1
+
 This a simple async function. It's marked as async by using `async def`
 
 ```python
@@ -13,6 +25,8 @@ asyncio.run(hello_world())
 # output:
 # Hello World!
 ```
+
+## Example 2
 
 This is an example of 2 async tasks that run as a group.
 1. `await` signals that the async task will "wait" for a response from another async task.
@@ -53,6 +67,21 @@ print(f'{result=}')
 # result=['Hello World!', 123]
 ```
 
+## Exercise
+
+> official docs: https://docs.python.org/3/library/asyncio.html
+
+The above code contains a basic "producer-consumer" example.
+
+- There are 2 functions that are connected by a `Queue`.
+- One function puts items on the queue
+- And the other function pops items off the queue and does some work on it (in this case it just sleeps)
+- You can modify any part of the code you like, except
+  - keep the queue as-is (size 50)
+  - keep the producer and consumer as the only 2 functions that use the queue
+  - keep the sleep times
+  - keep the number of items (100)
+
 ```python
 import asyncio
 import time
@@ -63,7 +92,7 @@ async def consumer(id: str, queue: asyncio.Queue):
         item = await queue.get()
         print(f'-> \x1b[31m{id:<10s}Consumed {item!r}, qsize: {queue.qsize()}\x1b[0m', flush=True)
         total += item
-        await asyncio.sleep(0.1)
+        await asyncio.sleep(0.1) # don't modify this!
         queue.task_done()
     return total
 
@@ -71,7 +100,7 @@ async def producer(id, queue, items):
     for i in items:
         await queue.put(i)
         print(f'+ \x1b[32m{id:<10s}Produced {i}\x1b[0m', flush=True)
-        await asyncio.sleep(0.01)
+        await asyncio.sleep(0.01) # don't modify this!
 
 async def qmain():
     queue = asyncio.Queue(maxsize=50)
@@ -97,17 +126,12 @@ print(f'{result=}')
 ...
 ```
 
-## Exercise
+### asyncio.Queue
 
-official docs: https://docs.python.org/3/library/asyncio.html
-
-The above code contains a basic "producer-consumer" example.
-
-info:
-- There are 2 functions that are connected by a `Queue`.
-- One function puts items on the queue
-- And the other function pops items off the queue and does some work on it (in this case it just sleeps)
-- You can modify
+The `queue` is a handy class from `asyncio` that supports `put` and `get` (among other things).
+- each `put` and `get` is awaitable, meaning that async functions can coordinate without causing bad things to happen (like what happens when you modify a dict with `.pop` as you loop through it).
+- giving the queue a `maxsize` means that if the queue already has that many items, a call to `put` will wait until the queue has `< maxsize` items. It can wait indefinitely for this to happen
+- calling `get` on a queue with 0 items will wait (indefinitely) until there is an item on the queue.
 
 ### Problem 1: Communication
 
