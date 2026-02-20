@@ -37,15 +37,6 @@ This is an example of 2 async tasks that run as a group.
     - since `gather` is an async function itself, it has to be defined in an async function
     - which can then be run in a non-async context using `asyncio.run`
 
-Notes:
-
-- it is not possible to call async functions directly from non-async code. doing something like `hello_world()` with an async function will simply have no effect - the async code will only run with `await` or `asyncio.run` etc.
-- async functions do NOT switch execution to another unless `await` is used.
-  - this is in contrast to `threading`, where this switching happens at random points that you have no control over
-  - this is the pivotal, main distinction between `async` and `threads`
-- if you need to switch control to another async function without actually doing anything, you can use `await asyncio.sleep(0)`
-- print debugging/logging is your friend when writing async code. As the number of async tasks grows, so does the complexity of their interactions, and it's not always possible to use unit testing alone in order to ensure expected behaviour and avoid deadlocks
-
 ```python
 async def hello_world():
     await asyncio.sleep(1)
@@ -67,6 +58,15 @@ print(f'{result=}')
 # result=['Hello World!', 123]
 ```
 
+Notes:
+
+- it is not possible to call async functions directly from non-async code. doing something like `hello_world()` with an async function will simply have no effect - the async code will only run with `await` or `asyncio.run` etc.
+- async functions do NOT switch execution to another unless `await` is used.
+  - this is in contrast to `threading`, where this switching happens at random points that you have no control over
+  - this is the pivotal, main distinction between `async` and `threads`
+- if you need to switch control to another async function without actually doing anything, you can use `await asyncio.sleep(0)`
+- print debugging/logging is your friend when writing async code. As the number of async tasks grows, so does the complexity of their interactions, and it's not always possible to use unit testing alone in order to ensure expected behaviour and avoid deadlocks
+
 ## Exercise
 
 > official docs: https://docs.python.org/3/library/asyncio.html
@@ -74,13 +74,9 @@ print(f'{result=}')
 The above code contains a basic "producer-consumer" example.
 
 - There are 2 functions that are connected by a `Queue`.
-- One function puts items on the queue
-- And the other function pops items off the queue and does some work on it (in this case it just sleeps)
-- You can modify any part of the code you like, except
-  - keep the queue as-is (size 50)
-  - keep the producer and consumer as the only 2 functions that use the queue
-  - keep the sleep times
-  - keep the number of items (100)
+- One function puts items on the queue.
+- And the other function pops items off the queue and does some work on it.
+- If you've watched the "concurrency is not parallelism" talk linked in the main readme - this is somewhat akin to the examples with gophers that Rob Pike uses.
 
 ```python
 import asyncio
@@ -126,6 +122,18 @@ print(f'{result=}')
 ...
 ```
 
+You can modify any part of the code you like, except
+- keep the queue as-is (size 50)
+- keep the producer and consumer as the only 2 functions that use the queue
+- keep the sleep times
+- keep the number of items (100)
+
+You _can_ totally modify
+- the print/log statements
+- the arguments that the producer/consumer functions have
+- how the tasks are assembled and gathered
+- you can totally modify the `while True` or `for i in items` lines, but this is also solvable by leaving them as-is.
+
 ### asyncio.Queue
 
 The `queue` is a handy class from `asyncio` that supports `put` and `get` (among other things).
@@ -146,7 +154,8 @@ The `queue` is a handy class from `asyncio` that supports `put` and `get` (among
 4. Run 2 more consumers alongside the existing producer & consumer. Tip: Ensure that they have unique IDs
   - Does the code run to completion? If not, can you figure out why and modify the code so that it does?
 5. Estimate - what is the lowest possible theoretical time that this could run in?
-6. Add more async workers until you reach close to this number (Don't modify any of the sleeps!)
+6. Add more async workers until you reach close to the fastest/lowest time (Don't modify any of the sleeps!)
+  - check the total time against your prediction. if it's different, can you reason/understand why it took the time that it did?  
 
 ### Problem 3: Results
 
@@ -154,4 +163,4 @@ The `queue` is a handy class from `asyncio` that supports `put` and `get` (among
     ```
     consumer ID | queue item
     ```
-8. Ensure that all consumers write their output to the same file
+    - Make all the consumers write their output to the same (single) file, something like `results.txt`
